@@ -22,7 +22,7 @@ expoModule {
 }
 
 android {
-  namespace "expo.modules.wikireader"
+  namespace 'expo.modules.wikireader'
   defaultConfig {
     versionCode 1
     versionName '1.0.0'
@@ -30,7 +30,11 @@ android {
 }
 
 dependencies {
-  implementation project(":expo-ui")
+  if (findProject(':expo-ui') != null) {
+    implementation project(':expo-ui')
+  } else {
+    implementation 'expo.modules.ui:expo.modules.ui:+'
+  }
 
   implementation 'androidx.compose.foundation:foundation-android:1.10.0'
 }

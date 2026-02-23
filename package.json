@@ -46,14 +46,5 @@
     "eslint": "^9.25.0",
     "eslint-config-expo": "~55.0.0"
   },
-  "expo": {
-    "autolinking": {
-      "android": {
-        "buildFromSource": [
-          "expo-ui"
-        ]
-      }
-    }
-  },
   "private": true
 }
