@@ -51,7 +51,8 @@ function ColorPickerButton({ color, isSelected, onPress }: ColorPickerButtonProp
     <IconButton
       onPress={onPress}
       elementColors={{ containerColor: color }}
-      modifiers={[paddingAll(4), size(48, 48)]}>
+      modifiers={[paddingAll(4), size(48, 48)]}
+    >
       {icon}
     </IconButton>
   );

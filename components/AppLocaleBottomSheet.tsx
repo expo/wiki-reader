@@ -52,7 +52,8 @@ export function AppLocaleBottomSheet({
         />
 
         <LazyColumn
-          modifiers={[fillMaxWidth(), padding(16, 0, 16, 0), clip(Shapes.RoundedCorner(20))]}>
+          modifiers={[fillMaxWidth(), padding(16, 0, 16, 0), clip(Shapes.RoundedCorner(20))]}
+        >
           <LanguageListItem
             headline="System default"
             selected={isSystemDefault}

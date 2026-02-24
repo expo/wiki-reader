@@ -33,7 +33,8 @@ export function LanguageListItem({
       headline={headline}
       supportingText={supportingText}
       colors={colors}
-      modifiers={[clip(clipShape), clickable(onClick)]}>
+      modifiers={[clip(clipShape), clickable(onClick)]}
+    >
       {selected && (
         <ListItem.Leading>
           <Icon source={require('@/assets/symbols/check.xml')} />

@@ -185,7 +185,10 @@ export default function Saved() {
     for (const article of articles) {
       langMap.set(article.lang, article.langName);
     }
-    return Array.from(langMap.entries()).map(([code, name]) => ({ code, name }));
+    return Array.from(langMap.entries()).map(([code, name]) => ({
+      code,
+      name,
+    }));
   }, [articles]);
 
   const filteredArticles = useMemo(() => {
@@ -231,11 +234,13 @@ export default function Saved() {
                 onPress={() => {
                   setDeleteTarget(null);
                   setShowDeleteDialog(true);
-                }}>
+                }}
+              >
                 <Icon source={require('@/assets/symbols/delete.xml')} tintColor="#1d1b20" />
               </IconButton>
             </Host>
           ),
+          title: 'Saved',
         }}
       />
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
@@ -263,7 +268,8 @@ export default function Saved() {
               </Text>
               <Text
                 style={{ typography: 'bodyMedium', textAlign: 'center' }}
-                modifiers={[padding(48, 0, 48, 0)]}>
+                modifiers={[padding(48, 0, 48, 0)]}
+              >
                 Articles you save will show up here
               </Text>
             </Column>
@@ -271,17 +277,20 @@ export default function Saved() {
         ) : (
           <LazyColumn
             verticalArrangement={{ spacedBy: 2 }}
-            contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}>
+            contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}
+          >
             {showLanguageChips ? (
               <FlowRow
                 horizontalArrangement={{ spacedBy: 8 }}
-                modifiers={[padding(0, 8, 0, 8), fillMaxWidth()]}>
+                modifiers={[padding(0, 8, 0, 8), fillMaxWidth()]}
+              >
                 {availableLanguages.map((lang) => (
                   <FilterChip
                     key={lang.code}
                     label={lang.name}
                     selected={selectedLanguages.has(lang.code)}
-                    onPress={() => toggleLanguageFilter(lang.code)}>
+                    onPress={() => toggleLanguageFilter(lang.code)}
+                  >
                     {selectedLanguages.has(lang.code) ? (
                       <FilterChip.LeadingIcon>
                         <Icon source={require('@/assets/symbols/check.xml')} tintColor="#000000" />
@@ -297,7 +306,8 @@ export default function Saved() {
                 <Text
                   key={`${langName}-header`}
                   style={{ typography: 'titleSmall' }}
-                  modifiers={[padding(32, 14, 32, 14)]}>
+                  modifiers={[padding(32, 14, 32, 14)]}
+                >
                   {langName}
                 </Text>
               ) : null,
@@ -320,7 +330,12 @@ export default function Saved() {
                       clip(
                         Shapes.RoundedCorner(
                           items.length === 1
-                            ? { topStart: 20, topEnd: 20, bottomStart: 20, bottomEnd: 20 }
+                            ? {
+                                topStart: 20,
+                                topEnd: 20,
+                                bottomStart: 20,
+                                bottomEnd: 20,
+                              }
                             : cornerRadii(itemPosition)
                         )
                       ),
@@ -333,7 +348,8 @@ export default function Saved() {
                           },
                         })
                       ),
-                    ]}>
+                    ]}
+                  >
                     <ListItem.Leading>
                       <Box
                         modifiers={[
@@ -348,7 +364,8 @@ export default function Saved() {
                           background(Color.android.dynamic.surfaceVariant),
                           size(64, 64),
                         ]}
-                        contentAlignment="center">
+                        contentAlignment="center"
+                      >
                         <Text style={{ typography: 'titleMedium' }}>
                           {article.title.charAt(0).toUpperCase()}
                         </Text>

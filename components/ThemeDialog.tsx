@@ -56,7 +56,8 @@ export function ThemeDialog({ options, selectedKey, onDismiss, onConfirm }: Them
                   clip(Shapes.RoundedCorner(16)),
                   selectable(option.key === selected, () => setSelected(option.key)),
                   padding(16, 0, 16, 0),
-                ]}>
+                ]}
+              >
                 <RadioButton selected={option.key === selected} />
                 <Text style={{ typography: 'bodyLarge' }} modifiers={[padding(16, 0, 0, 0)]}>
                   {option.label}
@@ -73,7 +74,8 @@ export function ThemeDialog({ options, selectedKey, onDismiss, onConfirm }: Them
               onPress={() => {
                 onDismiss();
                 onConfirm(selected);
-              }}>
+              }}
+            >
               OK
             </TextButton>
           </Row>

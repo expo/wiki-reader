@@ -20,7 +20,8 @@ export function ClickableListItem({
     <ListItem
       headline={headline}
       supportingText={supportingText}
-      modifiers={[clip(Shapes.RoundedCorner(cornerRadii(itemPosition))), clickable(onClick)]}>
+      modifiers={[clip(Shapes.RoundedCorner(cornerRadii(itemPosition))), clickable(onClick)]}
+    >
       {children}
     </ListItem>
   );

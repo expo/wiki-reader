@@ -58,7 +58,8 @@ export function DeleteArticleDialog({
                 } else {
                   onDeleteArticle?.();
                 }
-              }}>
+              }}
+            >
               Delete
             </TextButton>
           </Row>

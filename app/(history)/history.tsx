@@ -131,7 +131,10 @@ const MOCK_HISTORY: HistoryItem[] = [
 
 function formatTime(timestamp: number): string {
   const date = new Date(timestamp);
-  return date.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+  return date.toLocaleTimeString(undefined, {
+    hour: 'numeric',
+    minute: '2-digit',
+  });
 }
 
 function formatDateLabel(timestamp: number): string {
@@ -187,6 +190,7 @@ export default function History() {
               </IconButton>
             </Host>
           ),
+          title: 'History',
         }}
       />
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
@@ -214,7 +218,8 @@ export default function History() {
               </Text>
               <Text
                 style={{ typography: 'bodyMedium', textAlign: 'center' }}
-                modifiers={[padding(48, 0, 48, 0)]}>
+                modifiers={[padding(48, 0, 48, 0)]}
+              >
                 Articles you view will show up here
               </Text>
             </Column>
@@ -222,12 +227,14 @@ export default function History() {
         ) : (
           <LazyColumn
             verticalArrangement={{ spacedBy: 2 }}
-            contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}>
+            contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}
+          >
             {Array.from(groupedHistory.entries()).map(([dateLabel, items]) => [
               <Text
                 key={`${dateLabel}-header`}
                 style={{ typography: 'titleSmall' }}
-                modifiers={[padding(32, 14, 32, 14)]}>
+                modifiers={[padding(32, 14, 32, 14)]}
+              >
                 {dateLabel}
               </Text>,
               ...items.map((item, index) => {
@@ -249,7 +256,12 @@ export default function History() {
                       clip(
                         Shapes.RoundedCorner(
                           items.length === 1
-                            ? { topStart: 20, topEnd: 20, bottomStart: 20, bottomEnd: 20 }
+                            ? {
+                                topStart: 20,
+                                topEnd: 20,
+                                bottomStart: 20,
+                                bottomEnd: 20,
+                              }
                             : cornerRadii(itemPosition)
                         )
                       ),
@@ -262,7 +274,8 @@ export default function History() {
                           },
                         })
                       ),
-                    ]}>
+                    ]}
+                  >
                     <ListItem.Leading>
                       <Box
                         modifiers={[
@@ -277,7 +290,8 @@ export default function History() {
                           background(Color.android.dynamic.surfaceVariant),
                           size(64, 64),
                         ]}
-                        contentAlignment="center">
+                        contentAlignment="center"
+                      >
                         <Text style={{ typography: 'titleMedium' }}>
                           {item.title.charAt(0).toUpperCase()}
                         </Text>

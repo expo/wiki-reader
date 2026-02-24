@@ -1,21 +1,21 @@
 import {
   Box,
-  Host,
+  Column,
   HorizontalFloatingToolbar,
+  Host,
   Icon,
   IconButton,
+  LinearProgress,
   PullToRefreshBox,
   SearchBar,
   Text,
-  Column,
-  LinearProgress,
 } from '@expo/ui/jetpack-compose';
 import {
-  paddingAll,
   align,
-  offset,
   fillMaxSize,
   fillMaxWidth,
+  offset,
+  paddingAll,
 } from '@expo/ui/jetpack-compose/modifiers';
 import { DrawerActions } from '@react-navigation/native';
 import { Stack, useNavigation } from 'expo-router';
@@ -60,11 +60,13 @@ export default function Home() {
               style={{
                 height: 52,
                 marginHorizontal: 16,
-              }}>
+              }}
+            >
               <SearchBar
                 onSearch={(searchText) => {
                   alert(`search for: ${searchText}`);
-                }}>
+                }}
+              >
                 <SearchBar.Placeholder>
                   <Column modifiers={[fillMaxWidth()]}>
                     <Text style={{ typography: 'bodyLarge' }}>Search wikipedia</Text>
@@ -85,7 +87,8 @@ export default function Home() {
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
         <Box
           modifiers={[fillMaxSize(), paddingAll(8)]}
-          floatingToolbarExitAlwaysScrollBehavior="bottom">
+          floatingToolbarExitAlwaysScrollBehavior="bottom"
+        >
           <PullToRefreshBox
             modifiers={[fillMaxSize()]}
             isRefreshing={isRefreshing}
@@ -93,7 +96,8 @@ export default function Home() {
               setIsRefreshing(true);
               await webViewRef.current?.reload();
               setIsRefreshing(false);
-            }}>
+            }}
+          >
             <ComposeWebView
               url={WIKIPEDIA_URL}
               ref={webViewRef}
@@ -109,7 +113,8 @@ export default function Home() {
 
           <HorizontalFloatingToolbar
             variant="vibrant"
-            modifiers={[align('bottomCenter'), offset(0, -16)]}>
+            modifiers={[align('bottomCenter'), offset(0, -16)]}
+          >
             <IconButton onPress={shuffle}>
               <Icon source={require('@/assets/symbols/shuffle.xml')} tintColor="#1d1b20" />
             </IconButton>

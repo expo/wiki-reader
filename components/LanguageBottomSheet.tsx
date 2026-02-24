@@ -63,7 +63,8 @@ export function LanguageBottomSheet({
         />
 
         <LazyColumn
-          modifiers={[fillMaxWidth(), padding(16, 0, 16, 0), clip(Shapes.RoundedCorner(20))]}>
+          modifiers={[fillMaxWidth(), padding(16, 0, 16, 0), clip(Shapes.RoundedCorner(20))]}
+        >
           {showRecentSection && (
             <>
               <Text style={{ typography: 'titleSmall' }} modifiers={[padding(16, 0, 16, 16)]}>

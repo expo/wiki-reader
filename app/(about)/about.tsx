@@ -32,7 +32,8 @@ export default function About() {
       <Host style={{ flex: 1 }} colorScheme={colorScheme}>
         <LazyColumn
           verticalArrangement={{ spacedBy: 2 }}
-          contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}>
+          contentPadding={{ start: 16, end: 16, top: 8, bottom: 16 }}
+        >
           {/* App header */}
           <Column
             horizontalAlignment="center"
@@ -48,7 +49,8 @@ export default function About() {
               background(Color.android.dynamic.surfaceContainer),
               fillMaxWidth(),
               paddingAll(24),
-            ]}>
+            ]}
+          >
             <Row verticalAlignment="center" horizontalArrangement={{ spacedBy: 8 }}>
               <Icon
                 source={require('@/assets/symbols/feed.xml')}
@@ -58,9 +60,7 @@ export default function About() {
               <Text style={{ typography: 'headlineSmall', fontWeight: 'bold' }}>Wiki Reader</Text>
             </Row>
             <Spacer modifiers={[height(4)]} />
-            <Text style={{ typography: 'bodyMedium' }}>
-              Expo UI clone of nsh07/WikiReader
-            </Text>
+            <Text style={{ typography: 'bodyMedium' }}>Expo UI clone of nsh07/WikiReader</Text>
           </Column>
 
           <Spacer modifiers={[height(8)]} />
@@ -69,7 +69,8 @@ export default function About() {
           <ListItem
             headline="Version"
             supportingText="1.0.0 (expo-ui)"
-            modifiers={[clip(Shapes.RoundedCorner(cornerRadii('leading')))]}>
+            modifiers={[clip(Shapes.RoundedCorner(cornerRadii('leading')))]}
+          >
             <ListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/outline_info.xml')}
@@ -82,7 +83,8 @@ export default function About() {
             supportingText="expo/expo — apps/wiki-reader"
             onClick={() =>
               Linking.openURL('https://github.com/expo/expo/tree/main/apps/wiki-reader')
-            }>
+            }
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/function.xml')}
@@ -93,7 +95,8 @@ export default function About() {
           <ClickableListItem
             headline="Original App"
             supportingText="nsh07/WikiReader on GitHub"
-            onClick={() => Linking.openURL('https://github.com/nsh07/WikiReader')}>
+            onClick={() => Linking.openURL('https://github.com/nsh07/WikiReader')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/open_in_full.xml')}
@@ -107,7 +110,8 @@ export default function About() {
             itemPosition="trailing"
             onClick={() =>
               Linking.openURL('https://github.com/expo/expo/blob/main/apps/wiki-reader/LICENSE')
-            }>
+            }
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/feed.xml')}
@@ -120,16 +124,16 @@ export default function About() {
           <Text
             style={{ typography: 'titleSmall' }}
             color={Color.android.dynamic.primary}
-            modifiers={[padding(32, 14, 32, 14)]}>
+            modifiers={[padding(32, 14, 32, 14)]}
+          >
             Built with
           </Text>
           <ClickableListItem
             headline="@expo/ui"
             supportingText="Jetpack Compose components for React Native"
             itemPosition="leading"
-            onClick={() =>
-              Linking.openURL('https://docs.expo.dev/ui/expo-ui/introduction/')
-            }>
+            onClick={() => Linking.openURL('https://docs.expo.dev/ui/expo-ui/introduction/')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/palette.xml')}
@@ -141,7 +145,8 @@ export default function About() {
             headline="Expo Router"
             supportingText="File-based routing for React Native"
             itemPosition="trailing"
-            onClick={() => Linking.openURL('https://docs.expo.dev/router/introduction/')}>
+            onClick={() => Linking.openURL('https://docs.expo.dev/router/introduction/')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/share.xml')}
@@ -154,14 +159,16 @@ export default function About() {
           <Text
             style={{ typography: 'titleSmall' }}
             color={Color.android.dynamic.primary}
-            modifiers={[padding(32, 14, 32, 14)]}>
+            modifiers={[padding(32, 14, 32, 14)]}
+          >
             Credits
           </Text>
           <ClickableListItem
             headline="Nishant Mishra"
             supportingText="Original WikiReader author"
             itemPosition="leading"
-            onClick={() => Linking.openURL('https://github.com/nsh07')}>
+            onClick={() => Linking.openURL('https://github.com/nsh07')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/share.xml')}
@@ -173,7 +180,8 @@ export default function About() {
             headline="Donate"
             supportingText="Support the original author"
             itemPosition="trailing"
-            onClick={() => Linking.openURL('https://github.com/sponsors/nsh07')}>
+            onClick={() => Linking.openURL('https://github.com/sponsors/nsh07')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/filled_info.xml')}
@@ -186,14 +194,16 @@ export default function About() {
           <Text
             style={{ typography: 'titleSmall' }}
             color={Color.android.dynamic.primary}
-            modifiers={[padding(32, 14, 32, 14)]}>
+            modifiers={[padding(32, 14, 32, 14)]}
+          >
             Wikipedia
           </Text>
           <ClickableListItem
             headline="Wikipedia"
             supportingText="The free encyclopedia"
             itemPosition="leading"
-            onClick={() => Linking.openURL('https://wikipedia.org')}>
+            onClick={() => Linking.openURL('https://wikipedia.org')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/language.xml')}
@@ -205,7 +215,8 @@ export default function About() {
             headline="Support Wikipedia"
             supportingText="Donate to the Wikimedia Foundation"
             itemPosition="trailing"
-            onClick={() => Linking.openURL('https://wikimediafoundation.org/support/')}>
+            onClick={() => Linking.openURL('https://wikimediafoundation.org/support/')}
+          >
             <ClickableListItem.Leading>
               <Icon
                 source={require('@/assets/symbols/translate.xml')}
